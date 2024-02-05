@@ -1,0 +1,10 @@
+<h1>Pricing</h1>
+<% @pricing = Stripe::Price.list(lookup_keys: ['good_year', 'good_week', 'good_month'], expand: ["data.product"]) %>
+<% @pricing.each do |price|%>
+    <br>
+    <%= price.id%>
+    <%= price.product.name %>
+    <%= price.unit_amount / 100%>
+    <%= price.currency%>
+    <%= price.recurring.interval%>
+<% end %>

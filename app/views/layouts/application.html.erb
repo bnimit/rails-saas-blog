@@ -15,6 +15,7 @@
       <p class="alert"><%= alert %></p>
     <br>
     <%=  link_to "Current Posts", posts_path %>
+    <%=  link_to "Pricing Page", pricing_path %>
     <% if current_user %>
       <p align="right"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p><br>
       <span><b>User: </b><%= link_to current_user.email, edit_user_registration_path %>
